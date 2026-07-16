@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Aniversários e Festas - Doce Sabor by Dai. Bolachas decoradas para aniversários, batizados, chás e comemorações especiais."
+    />
+    <title>Aniversários e Festas | Doce Sabor by Dai</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "cream-bg": "#FDFBF7",
+              "tiffany-blue": "#33A19C",
+              "delicate-pink": "#F2A3A6",
+              "dark-text": "#362222",
+              "dark-bg": "#262626",
+              "dark-tiffany-blue": "#6AB4B0",
+              "dark-delicate-pink": "#FACBCD",
+              "dark-text-light": "#E0E0E0",
+              "dark-soft-cream": "#3F3F3F",
+            },
+            fontFamily: {
+              "dancing-script": ['"Dancing Script"', "cursive"],
+              "open-sans": ['"Open Sans"', "sans-serif"],
+            },
+            borderRadius: {
+              "3xl": "1.5rem",
+              "4xl": "2rem",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="font-open-sans bg-cream-bg text-dark-text dark:bg-dark-bg dark:text-dark-text-light antialiased min-h-screen flex flex-col justify-between transition-colors duration-500"
+  >
+    <!-- Cabeçalho Simples -->
+    <header
+      class="container mx-auto px-4 py-4 flex items-center justify-between"
+    >
+      <a href="index.html" class="flex items-center gap-3">
+        <img
+          src="imagens/novo-logo.jpg.jfif"
+          alt="Logo"
+          class="w-12 h-12 rounded-xl object-cover border border-delicate-pink shadow-sm"
+        />
+        <span
+          class="text-2xl font-dancing-script font-bold text-tiffany-blue dark:text-dark-tiffany-blue"
+          >Doce Sabor by Dai</span
+        >
+      </a>
+      <a
+        href="index.html"
+        class="bg-tiffany-blue hover:bg-delicate-pink text-white px-4 py-2 rounded-full font-bold text-sm shadow-md transition duration-300"
+      >
+        ← Voltar para Home
+      </a>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 flex-grow">
+      <!-- Título da Coleção -->
+      <div class="text-center mb-12 space-y-3">
+        <span
+          class="text-xs uppercase tracking-widest font-semibold text-delicate-pink bg-delicate-pink/20 dark:bg-neutral-800 dark:text-dark-delicate-pink px-4 py-1.5 rounded-full inline-block"
+        >
+          Momentos Especiais
+        </span>
+        <h1
+          class="text-4xl md:text-5xl font-dancing-script font-bold text-tiffany-blue dark:text-dark-tiffany-blue flex items-center justify-center gap-2"
+        >
+          🎂 Aniversários e Festas
+        </h1>
+        <p
+          class="text-sm md:text-base text-dark-text/70 dark:text-dark-text-light/80 max-w-xl mx-auto"
+        >
+          Deixe sua comemoração ainda mais marcante com bolachas personalizadas
+          que decoram a mesa e servem como lembrancinhas inesquecíveis.
+        </p>
+      </div>
+
+      <!-- Grid de Produtos -->
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-16"
+      >
+        <!-- Item 1 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <div
+            class="w-full h-48 rounded-2xl overflow-hidden mb-3 bg-neutral-100"
+          >
+            <img
+              src="imagens/festa-infantil.jpg"
+              alt="Kit Festa Infantil"
+              class="w-full h-full object-cover"
+              onerror="this.src = 'imagens/mascotes.jpg.jfif'"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Lembrancinhas Infantis
+          </h3>
+        </div>
+
+        <!-- Item 2 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <div
+            class="w-full h-48 rounded-2xl overflow-hidden mb-3 bg-neutral-100"
+          >
+            <img
+              src="imagens/festa-batizado.jpg"
+              alt="Bolachas para Batizado"
+              class="w-full h-full object-cover"
+              onerror="this.src = 'imagens/mascotes.jpg.jfif'"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Batizados & Chá de Bebê
+          </h3>
+        </div>
+
+        <!-- Item 3 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <div
+            class="w-full h-48 rounded-2xl overflow-hidden mb-3 bg-neutral-100"
+          >
+            <img
+              src="imagens/festa-15anos.jpg"
+              alt="Kit Debutante & Casamentos"
+              class="w-full h-full object-cover"
+              onerror="this.src = 'imagens/mascotes.jpg.jfif'"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Casamentos & 15 Anos
+          </h3>
+        </div>
+
+        <!-- Item 4 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <div
+            class="w-full h-48 rounded-2xl overflow-hidden mb-3 bg-neutral-100"
+          >
+            <img
+              src="imagens/festa-adulto.jpg"
+              alt="Kits Temáticos Adulto"
+              class="w-full h-full object-cover"
+              onerror="this.src = 'imagens/mascotes.jpg.jfif'"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Kits Temáticos & Datas
+          </h3>
+        </div>
+      </div>
+
+      <!-- BANNER DE ENCOMENDAS PERSONALIZADAS -->
+      <section class="max-w-4xl mx-auto mb-12">
+        <div
+          class="bg-gradient-to-br from-cream-bg to-[#FFF8DC] dark:from-neutral-800 dark:to-neutral-900 p-8 rounded-4xl border-2 border-dashed border-delicate-pink/40 dark:border-dark-tiffany-blue/40 shadow-md text-center space-y-5 transition-colors duration-500"
+        >
+          <div class="text-3xl">💡 🍪 ✨</div>
+          <h3
+            class="text-2xl md:text-3xl font-dancing-script font-bold text-tiffany-blue dark:text-dark-tiffany-blue"
+          >
+            Quer um tema ou personagem específico para sua festa?
+          </h3>
+          <p
+            class="text-sm md:text-base text-dark-text/80 dark:text-dark-text-light/95 max-w-2xl mx-auto leading-relaxed"
+          >
+            Não se preocupe! Para o seu total agrado e satisfação,
+            <strong class="text-delicate-pink dark:text-dark-delicate-pink"
+              >nós encomendamos o carimbo e o cortador exclusivo</strong
+            >
+            para fazer a bolachinha no formato exato da sua festa ou personagem
+            favorito!
+          </p>
+          <p
+            class="text-xs text-dark-text/60 dark:text-dark-text-light/60 italic"
+          >
+            Fale conosco, envie a foto da sua decoração e nós faremos o cortador
+            sob medida!
+          </p>
+          <div class="pt-2">
+            <a
+              href="https://wa.me/5567992086035?text=Olá%20Dai!%20Estava%20olhando%20o%20cardápio%20de%20Festas%20e%20gostaria%20de%20combinar%20um%20tema/cortador%20personalizado%20para%20minha%20comemoração..."
+              target="_blank"
+              class="inline-block bg-tiffany-blue hover:bg-delicate-pink text-white font-bold px-8 py-3 rounded-full shadow-md transition duration-300"
+            >
+              💬 Encomendar Tema de Festa Exclusivo
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="bg-[#FFF8DC] dark:bg-dark-soft-cream py-6 text-center border-t border-delicate-pink/20 transition-colors duration-500"
+    >
+      <p class="text-xs text-dark-text/70 dark:text-dark-text-light/70">
+        &copy; 2026 Doce Sabor by Dai. Todos os direitos reservados.
+      </p>
+    </footer>
+
+    <script>
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </body>
+</html>

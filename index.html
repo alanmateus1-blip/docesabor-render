@@ -1,0 +1,905 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Doce Sabor by Dai - Bolachas artesanais feitas com amor. Encomendas personalizadas para todas as ocasiões."
+    />
+    <title>Doce Sabor by Dai | Bolachas Artesanais</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "cream-bg": "#FDFBF7",
+              "tiffany-blue": "#33A19C",
+              "delicate-pink": "#F2A3A6",
+              "dark-text": "#362222",
+              "golden-sweet": "#FFD700",
+              "vibrant-pink": "#FF69B4",
+              "soft-cream": "#FFF8DC",
+              "dark-bg": "#262626",
+              "dark-tiffany-blue": "#6AB4B0",
+              "dark-delicate-pink": "#FACBCD",
+              "dark-text-light": "#E0E0E0",
+              "dark-soft-cream": "#3F3F3F",
+            },
+            fontFamily: {
+              "dancing-script": ['"Dancing Script"', "cursive"],
+              "open-sans": ['"Open Sans"', "sans-serif"],
+            },
+            borderRadius: {
+              "3xl": "1.5rem",
+              "4xl": "2rem",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer base {
+        body {
+          @apply font-open-sans bg-cream-bg text-dark-text transition-colors duration-500;
+        }
+        html.dark body {
+          @apply bg-dark-bg text-dark-text-light;
+        }
+        body::-webkit-scrollbar {
+          width: 8px;
+        }
+        body::-webkit-scrollbar-track {
+          background: theme("colors.cream-bg");
+        }
+        html.dark body::-webkit-scrollbar-track {
+          background: theme("colors.dark-bg");
+        }
+        body::-webkit-scrollbar-thumb {
+          background: theme("colors.delicate-pink");
+          border-radius: 4px;
+        }
+        html.dark body::-webkit-scrollbar-thumb {
+          background: theme("colors.dark-tiffany-blue");
+          border-radius: 4px;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="font-open-sans bg-cream-bg text-dark-text antialiased">
+    <!-- CABEÇALHO E MENU INTEGRADOS -->
+    <header
+      class="sticky top-0 z-20 w-full bg-cream-bg dark:bg-dark-bg shadow-sm transition-colors duration-500"
+    >
+      <nav
+        class="container mx-auto px-4 py-3 flex items-center justify-between"
+      >
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3">
+          <img
+            src="imagens/novo-logo.jpg.jfif"
+            alt="Logo Doce Sabor by Dai"
+            class="w-12 h-12 md:w-16 md:h-16 rounded-xl object-cover border border-delicate-pink shadow-sm"
+          />
+          <span
+            class="text-2xl md:text-3xl font-dancing-script font-bold text-tiffany-blue dark:text-dark-tiffany-blue"
+          >
+            Doce Sabor by Dai
+          </span>
+        </a>
+
+        <!-- Ações da Direita (Desktop + Mobile) -->
+        <div class="flex items-center gap-4">
+          <!-- Links do Menu (Desktop) -->
+          <div
+            class="hidden md:flex items-center gap-6 font-medium text-dark-text/80 dark:text-dark-text-light/80"
+          >
+            <a href="#" class="hover:text-tiffany-blue transition">Home</a>
+
+            <!-- Menu Dropdown -->
+            <div class="relative py-2">
+              <button
+                id="dropdown-btn"
+                onclick="toggleDropdown(event)"
+                class="flex items-center gap-1 hover:text-tiffany-blue transition font-medium focus:outline-none cursor-pointer"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Cardápio
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+
+              <div
+                id="dropdown-menu"
+                class="absolute left-0 mt-2 w-56 bg-white dark:bg-neutral-800 rounded-2xl shadow-xl border border-delicate-pink/10 hidden z-30 overflow-hidden"
+              >
+                <a
+                  href="natal.html"
+                  class="block px-5 py-3 text-sm text-dark-text dark:text-white hover:bg-cream-bg dark:hover:bg-neutral-700 transition"
+                  >🎄 Especial de Natal</a
+                >
+                <a
+                  href="pascoa.html"
+                  class="block px-5 py-3 text-sm text-dark-text dark:text-white hover:bg-cream-bg dark:hover:bg-neutral-700 transition"
+                  >🐰 Especial de Páscoa</a
+                >
+                <a
+                  href="festas.html"
+                  class="block px-5 py-3 text-sm text-dark-text dark:text-white hover:bg-cream-bg dark:hover:bg-neutral-700 transition"
+                  >🎂 Aniversários e Festas</a
+                >
+                <a
+                  href="corporativo.html"
+                  class="block px-5 py-3 text-sm text-dark-text dark:text-white hover:bg-cream-bg dark:hover:bg-neutral-700 transition"
+                  >💼 Corporativo & Marcas</a
+                >
+                <a
+                  href="diaadia.html"
+                  class="block px-5 py-3 text-sm text-dark-text dark:text-white hover:bg-cream-bg dark:hover:bg-neutral-700 transition"
+                  >🌸 Outros / Dia a Dia</a
+                >
+              </div>
+            </div>
+
+            <a href="#sabores" class="hover:text-tiffany-blue transition"
+              >Sabores</a
+            >
+            <a href="#sobre" class="hover:text-tiffany-blue transition"
+              >Sobre Nós</a
+            >
+            <a href="#contato" class="hover:text-tiffany-blue transition"
+              >Contato</a
+            >
+            <a
+              href="feedback.html"
+              class="bg-delicate-pink text-white px-4 py-1.5 rounded-full hover:bg-tiffany-blue transition shadow-sm text-sm font-semibold"
+              >✨ Feedback</a
+            >
+          </div>
+
+          <!-- Botão Dark Mode -->
+          <button
+            id="theme-toggle"
+            type="button"
+            class="text-dark-text dark:text-dark-text-light hover:text-tiffany-blue dark:hover:text-dark-tiffany-blue focus:outline-none transition"
+            aria-label="Alternar tema"
+          >
+            <svg
+              id="theme-toggle-dark-icon"
+              class="hidden w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              ></path>
+            </svg>
+            <svg
+              id="theme-toggle-light-icon"
+              class="hidden w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                clip-rule="evenodd"
+                fill-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+
+          <!-- Botão Menu Mobile (Hamburger) -->
+          <button
+            id="mobile-menu-btn"
+            type="button"
+            class="md:hidden text-dark-text dark:text-dark-text-light hover:text-tiffany-blue focus:outline-none"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+          >
+            <svg
+              class="w-7 h-7"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Painel do Menu Mobile -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden bg-cream-bg dark:bg-dark-bg border-t border-delicate-pink/20 py-4 px-4 space-y-4 shadow-inner"
+      >
+        <a
+          href="#"
+          class="block hover:text-tiffany-blue transition font-medium"
+          onclick="toggleMobileMenu()"
+          >Home</a
+        >
+        <div class="border-t border-delicate-pink/10 pt-2">
+          <p
+            class="font-semibold text-tiffany-blue dark:text-dark-tiffany-blue mb-2"
+          >
+            Cardápio
+          </p>
+          <div class="flex flex-col space-y-2 pl-2">
+            <a
+              href="natal.html"
+              class="block hover:text-tiffany-blue transition text-sm"
+              onclick="toggleMobileMenu()"
+              >🎄 Especial de Natal</a
+            >
+            <a
+              href="pascoa.html"
+              class="block hover:text-tiffany-blue transition text-sm"
+              onclick="toggleMobileMenu()"
+              >🐰 Especial de Páscoa</a
+            >
+            <a
+              href="festas.html"
+              class="block hover:text-tiffany-blue transition text-sm"
+              onclick="toggleMobileMenu()"
+              >🎂 Aniversários e Festas</a
+            >
+            <a
+              href="corporativo.html"
+              class="block hover:text-tiffany-blue transition text-sm"
+              onclick="toggleMobileMenu()"
+              >💼 Corporativo & Marcas</a
+            >
+            <a
+              href="diaadia.html"
+              class="block hover:text-tiffany-blue transition text-sm"
+              onclick="toggleMobileMenu()"
+              >🌸 Outros / Dia a Dia</a
+            >
+          </div>
+        </div>
+        <a
+          href="#sabores"
+          class="block hover:text-tiffany-blue transition font-medium"
+          onclick="toggleMobileMenu()"
+          >Sabores</a
+        >
+        <a
+          href="#sobre"
+          class="block hover:text-tiffany-blue transition font-medium"
+          onclick="toggleMobileMenu()"
+          >Sobre Nós</a
+        >
+        <a
+          href="#contato"
+          class="block hover:text-tiffany-blue transition font-medium"
+          onclick="toggleMobileMenu()"
+          >Contato</a
+        >
+        <a
+          href="feedback.html"
+          class="inline-block text-center bg-delicate-pink text-white px-4 py-2 rounded-full hover:bg-tiffany-blue transition shadow-sm text-sm font-semibold"
+          onclick="toggleMobileMenu()"
+          >✨ Deixe seu Feedback</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <!-- SEÇÃO HERO -->
+      <section class="container mx-auto px-4 pt-12 md:pt-16">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto"
+        >
+          <!-- TEXTO E BOTÕES (Esquerda no Desktop) -->
+          <div
+            class="w-full space-y-6 text-center lg:text-left flex flex-col items-center lg:items-start order-1"
+          >
+            <span
+              class="text-xs uppercase tracking-widest font-semibold text-tiffany-blue bg-tiffany-blue/10 px-4 py-1.5 rounded-full inline-block"
+            >
+              Artesanal & Delicioso
+            </span>
+            <h1
+              class="text-4xl md:text-5xl font-dancing-script text-tiffany-blue dark:text-dark-tiffany-blue leading-tight"
+            >
+              Um gostinho de quero mais.
+            </h1>
+            <p class="text-base text-dark-text/80 dark:text-dark-text-light/80">
+              Descubra o sabor inigualável das nossas bolachinhas artesanais,
+              feitas com os melhores ingredientes e muito carinho.
+            </p>
+            <div
+              class="flex flex-wrap gap-4 justify-center lg:justify-start pt-2 w-full"
+            >
+              <button
+                onclick="openCardapio(event)"
+                class="bg-tiffany-blue hover:bg-delicate-pink text-white font-bold px-6 py-3 rounded-full shadow-md transition duration-300 cursor-pointer"
+              >
+                Ver Cardápio Temático
+              </button>
+              <a
+                href="https://wa.me/5567992086035"
+                target="_blank"
+                class="border-2 border-tiffany-blue text-tiffany-blue hover:bg-tiffany-blue hover:text-white font-bold px-6 py-3 rounded-full transition duration-300 inline-flex items-center justify-center"
+              >
+                Falar com a Dai
+              </a>
+            </div>
+          </div>
+
+          <!-- IMAGEM LIMPA (Direita no Desktop) -->
+          <div class="w-full flex justify-center order-2">
+            <div class="w-full max-w-sm flex justify-center items-center">
+              <img
+                src="imagens/mascotes1.jpg.jfif"
+                alt="Mascotes Capivara Doce Sabor"
+                class="w-full h-auto rounded-3xl object-contain block"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO SOBRE NÓS -->
+      <section id="sobre" class="scroll-mt-24 container mx-auto px-4 py-16">
+        <div
+          class="bg-soft-cream dark:bg-dark-soft-cream rounded-4xl p-8 md:p-12 shadow-sm max-w-5xl mx-auto"
+        >
+          <h2
+            class="text-5xl font-dancing-script text-center text-tiffany-blue dark:text-dark-tiffany-blue mb-8"
+          >
+            Nossa História
+          </h2>
+          <div
+            class="space-y-6 text-dark-text/90 dark:text-dark-text-light/90 leading-relaxed text-justify max-w-3xl mx-auto"
+          >
+            <p>
+              A <strong>Doce Sabor By Dai</strong> nasceu em 2021, de forma
+              simples e despretensiosa. O que começou como uma paixão pela
+              confeitaria artesanal foi conquistando espaço por meio da
+              dedicação, do aperfeiçoamento constante e, principalmente, da
+              confiança dos nossos clientes.
+            </p>
+            <p>
+              Desde o início, acreditamos que cada bolachinha poderia fazer
+              parte de um momento especial. Por isso, buscamos unir sabor,
+              qualidade, criatividade e um acabamento cuidadoso em cada
+              encomenda.
+            </p>
+            <p
+              class="font-medium text-center text-tiffany-blue dark:text-dark-tiffany-blue italic"
+            >
+              "Cada encomenda é produzida como se fosse única, porque sabemos
+              que, para quem a recebe, ela realmente é."
+            </p>
+          </div>
+
+          <hr class="my-12 border-delicate-pink/20 max-w-xl mx-auto" />
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div
+              class="p-6 bg-white dark:bg-zinc-800 rounded-3xl shadow-sm border border-delicate-pink/10"
+            >
+              <div class="text-3xl mb-3">🎯</div>
+              <h3
+                class="text-xl font-bold text-dark-text dark:text-dark-text-light mb-3"
+              >
+                Missão
+              </h3>
+              <p class="text-sm text-dark-text/80 dark:text-dark-text-light/80">
+                Proporcionar momentos de satisfação com produtos artesanais
+                lindos e saborosos.
+              </p>
+            </div>
+            <div
+              class="p-6 bg-white dark:bg-zinc-800 rounded-3xl shadow-sm border border-delicate-pink/10"
+            >
+              <div class="text-3xl mb-3">👁️‍</div>
+              <h3
+                class="text-xl font-bold text-dark-text dark:text-dark-text-light mb-3"
+              >
+                Visão
+              </h3>
+              <p class="text-sm text-dark-text/80 dark:text-dark-text-light/80">
+                Ser referência na produção de bolachinhas personalizadas de alta
+                qualidade para todas as ocasiões.
+              </p>
+            </div>
+            <div
+              class="p-6 bg-white dark:bg-zinc-800 rounded-3xl shadow-sm border border-delicate-pink/10"
+            >
+              <div class="text-3xl mb-3">💎</div>
+              <h3
+                class="text-xl font-bold text-dark-text dark:text-dark-text-light mb-3"
+              >
+                Valores
+              </h3>
+              <p class="text-sm text-dark-text/80 dark:text-dark-text-light/80">
+                Qualidade total, dedicação, pontualidade e carinho em cada
+                detalhe personalizado.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO SABORES -->
+      <section
+        id="sabores"
+        class="scroll-mt-24 bg-white dark:bg-dark-bg py-16 md:py-24 transition-colors duration-500"
+      >
+        <div class="container mx-auto px-4 max-w-6xl">
+          <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+            <span
+              class="text-xs uppercase tracking-widest font-semibold text-tiffany-blue bg-tiffany-blue/10 px-4 py-1.5 rounded-full inline-block"
+              >Nossa Massa Tradicional</span
+            >
+            <h2
+              class="text-3xl md:text-4xl font-dancing-script font-bold text-tiffany-blue dark:text-dark-tiffany-blue"
+            >
+              Nossos Sabores Irresistíveis
+            </h2>
+            <p
+              class="text-sm md:text-base text-dark-text/70 dark:text-dark-text-light/80"
+            >
+              Escolha a base perfeita para as suas bolachinhas decoradas. Cada
+              receita é feita com amor e ingredientes nobres.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Sabor Café -->
+            <div
+              class="bg-cream-bg dark:bg-neutral-800 p-4 rounded-3xl shadow-md border border-delicate-pink/10 flex flex-col items-center text-center"
+            >
+              <div
+                class="w-full h-64 rounded-2xl overflow-hidden mb-4 bg-soft-cream"
+              >
+                <img
+                  src="imagens/cafe.jpg.jfif"
+                  alt="Sabor Café"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <span
+                class="text-xs font-bold text-tiffany-blue uppercase tracking-wider bg-tiffany-blue/10 px-3 py-1 rounded-full mb-2"
+                >Muito Pedido</span
+              >
+              <h3 class="text-xl font-bold text-dark-text dark:text-white">
+                ☕ Sabor Café
+              </h3>
+              <p
+                class="text-xs text-dark-text/70 dark:text-dark-text-light/80 mt-1"
+              >
+                Um toque marcante e sofisticado para quem ama o aroma do café
+                fresquinho.
+              </p>
+            </div>
+
+            <!-- Sabor Leite -->
+            <div
+              class="bg-cream-bg dark:bg-neutral-800 p-4 rounded-3xl shadow-md border border-delicate-pink/10 flex flex-col items-center text-center"
+            >
+              <div
+                class="w-full h-64 rounded-2xl overflow-hidden mb-4 bg-soft-cream"
+              >
+                <img
+                  src="imagens/leite.jpg.jfif"
+                  alt="Sabor Leite"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <span
+                class="text-xs font-bold text-tiffany-blue uppercase tracking-wider bg-tiffany-blue/10 px-3 py-1 rounded-full mb-2"
+                >Clássico</span
+              >
+              <h3 class="text-xl font-bold text-dark-text dark:text-white">
+                🥛 Sabor Leite
+              </h3>
+              <p
+                class="text-xs text-dark-text/70 dark:text-dark-text-light/80 mt-1"
+              >
+                Delicado, suave na medida certa e perfeito para estampar lindas
+                mensagens de gratidão.
+              </p>
+            </div>
+
+            <!-- Sabor Maracujá -->
+            <div
+              class="bg-cream-bg dark:bg-neutral-800 p-4 rounded-3xl shadow-md border border-delicate-pink/10 flex flex-col items-center text-center"
+            >
+              <div
+                class="w-full h-64 rounded-2xl overflow-hidden mb-4 bg-soft-cream"
+              >
+                <img
+                  src="imagens/maracuja.jpg.jfif"
+                  alt="Sabor Maracujá"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <span
+                class="text-xs font-bold text-tiffany-blue uppercase tracking-wider bg-tiffany-blue/10 px-3 py-1 rounded-full mb-2"
+                >Refrescante</span
+              >
+              <h3 class="text-xl font-bold text-dark-text dark:text-white">
+                🍋 Sabor Maracujá
+              </h3>
+              <p
+                class="text-xs text-dark-text/70 dark:text-dark-text-light/80 mt-1"
+              >
+                Delicioso sabor azedinho e tropical feito com a fruta pura.
+              </p>
+            </div>
+
+            <!-- Sabor Paçoquinha -->
+            <div
+              class="bg-cream-bg dark:bg-neutral-800 p-4 rounded-3xl shadow-md border border-delicate-pink/10 flex flex-col items-center text-center"
+            >
+              <div
+                class="w-full h-64 rounded-2xl overflow-hidden mb-4 bg-soft-cream"
+              >
+                <img
+                  src="imagens/pacoquinha.jpg.jfif"
+                  alt="Sabor Paçoquinha"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <span
+                class="text-xs font-bold text-tiffany-blue uppercase tracking-wider bg-tiffany-blue/10 px-3 py-1 rounded-full mb-2"
+                >Festivo</span
+              >
+              <h3 class="text-xl font-bold text-dark-text dark:text-white">
+                🥜 Sabor Paçoquinha
+              </h3>
+              <p
+                class="text-xs text-dark-text/70 dark:text-dark-text-light/80 mt-1"
+              >
+                O sabor inconfundível do amendoim em formas temáticas e lindas.
+              </p>
+            </div>
+
+            <!-- Sabor Panetone -->
+            <div
+              class="bg-cream-bg dark:bg-neutral-800 p-4 rounded-3xl shadow-md border border-delicate-pink/10 flex flex-col items-center text-center"
+            >
+              <div
+                class="w-full h-64 rounded-2xl overflow-hidden mb-4 bg-soft-cream"
+              >
+                <img
+                  src="imagens/panetone.jpg.jfif"
+                  alt="Sabor Panetone"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <span
+                class="text-xs font-bold text-tiffany-blue uppercase tracking-wider bg-tiffany-blue/10 px-3 py-1 rounded-full mb-2"
+                >Sazonal</span
+              >
+              <h3 class="text-xl font-bold text-dark-text dark:text-white">
+                🎄 Sabor Panetone
+              </h3>
+              <p
+                class="text-xs text-dark-text/70 dark:text-dark-text-light/80 mt-1"
+              >
+                Aroma mágico de fim de ano com frutas selecionadas em formato de
+                estrela.
+              </p>
+            </div>
+
+            <!-- Opção Salgada -->
+            <div
+              class="bg-cream-bg dark:bg-neutral-800 p-4 rounded-3xl shadow-md border border-delicate-pink/10 flex flex-col items-center text-center"
+            >
+              <div
+                class="w-full h-64 rounded-2xl overflow-hidden mb-4 bg-soft-cream"
+              >
+                <img
+                  src="imagens/salgada.jpg.jfif"
+                  alt="Bolachinha Salgada"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <span
+                class="text-xs font-bold text-tiffany-blue uppercase tracking-wider bg-tiffany-blue/10 px-3 py-1 rounded-full mb-2"
+                >Novidade</span
+              >
+              <h3 class="text-xl font-bold text-dark-text dark:text-white">
+                🌾 Opção Salgada
+              </h3>
+              <p
+                class="text-xs text-dark-text/70 dark:text-dark-text-light/80 mt-1"
+              >
+                Perfeita para petiscar, equilibrando o cardápio com muita
+                crocância.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO FEEDBACK RÁPIDO (CATA-CLIENTES) -->
+      <section class="container mx-auto px-4 py-8 max-w-4xl">
+        <div
+          class="bg-soft-cream dark:bg-dark-soft-cream rounded-4xl p-8 text-center shadow-sm border border-delicate-pink/10"
+        >
+          <div class="text-4xl mb-4">🍮 🧁 🍵</div>
+          <h3
+            class="text-3xl font-dancing-script font-bold text-tiffany-blue dark:text-dark-tiffany-blue mb-3"
+          >
+            Ficou com água na boca e quer garantir os seus sabores favoritos?
+          </h3>
+          <p
+            class="text-base text-dark-text/80 dark:text-dark-text-light/80 mb-6 max-w-2xl mx-auto"
+          >
+            Nossas fornadas são artesanais, fresquinhas e preparadas com muito
+            amor. Faça a sua combinação de massas preferida agora mesmo!
+          </p>
+          <a
+            href="https://wa.me/5567992086035"
+            target="_blank"
+            class="inline-flex items-center gap-2 bg-tiffany-blue hover:bg-delicate-pink text-white font-bold px-8 py-3 rounded-full shadow-md transition duration-300"
+          >
+            💬 Quero Fazer Meu Pedido Agora
+          </a>
+        </div>
+      </section>
+
+      <!-- SEÇÃO INSTAGRAM -->
+      <section
+        class="container mx-auto px-4 py-16 bg-[#edf7f6] dark:bg-zinc-900 rounded-4xl my-12 overflow-hidden transition-colors duration-500"
+      >
+        <div
+          class="flex flex-col lg:flex-row items-center justify-between gap-12"
+        >
+          <div class="w-full lg:w-1/2 text-left space-y-6">
+            <h2
+              class="text-4xl md:text-5xl font-dancing-script text-dark-text dark:text-dark-text-light leading-tight"
+            >
+              Acompanhe nossa doce rotina no Instagram
+            </h2>
+            <p
+              class="text-base text-dark-text/70 dark:text-dark-text-light/70 max-w-lg"
+            >
+              Bastidores da nossa produção, novidades quentinhas que saem do
+              forno e muito conteúdo para deixar seu feed mais doce. Siga
+              <span class="font-semibold text-tiffany-blue"
+                >@docesaborbydai</span
+              >.
+            </p>
+            <div>
+              <a
+                href="https://www.instagram.com/docesaborbydai"
+                target="_blank"
+                class="inline-flex items-center gap-2 bg-zinc-900 hover:bg-zinc-800 text-white font-semibold px-6 py-3 rounded-full shadow-md transition duration-300"
+              >
+                Seguir Perfil
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="w-full lg:w-1/2 flex items-center justify-center gap-4 relative mt-6 lg:mt-0"
+          >
+            <div
+              class="w-48 h-48 md:w-56 md:h-56 bg-white p-2 rounded-3xl shadow-lg transform -rotate-6 hover:rotate-0 transition duration-300"
+            >
+              <img
+                src="imagens/insta-1.jpg.jfif"
+                alt="Bastidores Doce Sabor"
+                class="w-full h-full object-cover rounded-2xl"
+              />
+            </div>
+            <div
+              class="w-48 h-48 md:w-56 md:h-56 bg-white p-2 rounded-3xl shadow-lg transform rotate-6 translate-y-6 hover:rotate-0 transition duration-300"
+            >
+              <img
+                src="imagens/insta-2.jpg.jfif"
+                alt="Bolachas Artesanais"
+                class="w-full h-full object-cover rounded-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO CONTATO -->
+      <section
+        id="contato"
+        class="scroll-mt-24 container mx-auto px-4 py-16 text-center bg-soft-cream dark:bg-dark-soft-cream rounded-4xl max-w-4xl shadow-inner my-12 transition-colors duration-500"
+      >
+        <h3
+          class="text-4xl font-dancing-script text-tiffany-blue dark:text-dark-tiffany-blue mb-6"
+        >
+          Fale Conosco
+        </h3>
+        <p class="text-lg mb-8 text-dark-text dark:text-dark-text-light">
+          Encomendas personalizadas e informações:
+        </p>
+        <div class="space-y-4 text-xl font-semibold mb-8">
+          <p>
+            WhatsApp:
+            <a
+              href="https://wa.me/5567992086035"
+              target="_blank"
+              class="text-delicate-pink hover:underline dark:text-dark-delicate-pink"
+              >(67) 99208-6035</a
+            >
+          </p>
+          <p>
+            Email:
+            <a
+              href="mailto:contato@docesaborbydai.com.br"
+              class="text-delicate-pink hover:underline dark:text-dark-delicate-pink"
+              >contato@docesaborbydai.com.br</a
+            >
+          </p>
+        </div>
+        <div class="flex justify-center space-x-6 text-lg font-bold">
+          <a
+            href="https://instagram.com/docesaborbydai"
+            target="_blank"
+            class="text-tiffany-blue hover:text-delicate-pink transition"
+            >Instagram</a
+          >
+          <a
+            href="https://www.facebook.com/daianecaroline.mateus"
+            target="_blank"
+            class="text-tiffany-blue hover:text-delicate-pink transition"
+            >Facebook</a
+          >
+        </div>
+      </section>
+
+      <!-- SEÇÃO CONVITE PARA FEEDBACK -->
+      <section class="container mx-auto px-4 py-12 text-center max-w-3xl">
+        <div
+          class="bg-white dark:bg-neutral-800 p-8 rounded-4xl border border-delicate-pink/25 shadow-sm space-y-4 transition-colors duration-500"
+        >
+          <span class="text-2xl text-yellow-400">⭐⭐⭐⭐⭐</span>
+          <h3
+            class="text-2xl font-dancing-script font-bold text-tiffany-blue dark:text-dark-tiffany-blue"
+          >
+            Sua opinião é muito importante!
+          </h3>
+          <p class="text-sm text-dark-text/70 dark:text-dark-text-light/70">
+            Já provou nossas bolachinhas ou teve uma experiência com nosso
+            atendimento? Conte para nós o que achou!
+          </p>
+          <div class="pt-2">
+            <a
+              href="feedback.html"
+              class="inline-block bg-tiffany-blue hover:bg-delicate-pink text-white font-bold px-8 py-3 rounded-full shadow-md transition duration-300"
+              >Ver Avaliações & Deixar Depoimento</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="bg-soft-cream dark:bg-dark-soft-cream py-8 text-center border-t border-delicate-pink/20 transition-colors duration-500"
+    >
+      <p class="text-sm text-dark-text/70 dark:text-dark-text-light/70">
+        &copy; 2026 Doce Sabor by Dai. Todos os direitos reservados.
+      </p>
+    </footer>
+
+    <script>
+      // 1. Dropdown Menu (Desktop)
+      function toggleDropdown(event) {
+        event.stopPropagation();
+        const menu = document.getElementById("dropdown-menu");
+        const btn = document.getElementById("dropdown-btn");
+        menu.classList.toggle("hidden");
+        btn.setAttribute("aria-expanded", !menu.classList.contains("hidden"));
+      }
+
+      // 2. Cardápio Hero (Abre dropdown no desktop ou menu mobile no celular)
+      function openCardapio(event) {
+        event.stopPropagation();
+        if (window.innerWidth < 768) {
+          if (mobileMenu.classList.contains("hidden")) toggleMobileMenu();
+        } else {
+          const menu = document.getElementById("dropdown-menu");
+          const btn = document.getElementById("dropdown-btn");
+          menu.classList.remove("hidden");
+          btn.setAttribute("aria-expanded", "true");
+        }
+      }
+
+      // 3. Mobile Menu
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      function toggleMobileMenu() {
+        mobileMenu.classList.toggle("hidden");
+        mobileMenuBtn.setAttribute(
+          "aria-expanded",
+          !mobileMenu.classList.contains("hidden"),
+        );
+      }
+      mobileMenuBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        toggleMobileMenu();
+      });
+
+      // 4. Fechar menus ao clicar fora
+      window.onclick = function (event) {
+        const menu = document.getElementById("dropdown-menu");
+        const btn = document.getElementById("dropdown-btn");
+        if (
+          menu &&
+          !menu.classList.contains("hidden") &&
+          !event.target.closest("#dropdown-btn")
+        ) {
+          menu.classList.add("hidden");
+          btn.setAttribute("aria-expanded", "false");
+        }
+
+        if (
+          mobileMenu &&
+          !mobileMenu.classList.contains("hidden") &&
+          !event.target.closest("#mobile-menu-btn") &&
+          !event.target.closest("#mobile-menu")
+        ) {
+          mobileMenu.classList.add("hidden");
+          mobileMenuBtn.setAttribute("aria-expanded", "false");
+        }
+      };
+
+      // 5. Dark Mode Toggle
+      const themeToggleBtn = document.getElementById("theme-toggle");
+      const darkIcon = document.getElementById("theme-toggle-dark-icon");
+      const lightIcon = document.getElementById("theme-toggle-light-icon");
+
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+        lightIcon.classList.remove("hidden");
+      } else {
+        document.documentElement.classList.remove("dark");
+        darkIcon.classList.remove("hidden");
+      }
+
+      themeToggleBtn.addEventListener("click", function () {
+        darkIcon.classList.toggle("hidden");
+        lightIcon.classList.toggle("hidden");
+
+        if (document.documentElement.classList.contains("dark")) {
+          document.documentElement.classList.remove("dark");
+          localStorage.setItem("color-theme", "light");
+        } else {
+          document.documentElement.classList.add("dark");
+          localStorage.setItem("color-theme", "dark");
+        }
+      });
+    </script>
+  </body>
+</html>
