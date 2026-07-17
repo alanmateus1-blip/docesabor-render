@@ -95,7 +95,23 @@
         </p>
       </div>
 
-      <!-- PAINEL DE DEPOIMENTOS EXISTENTES -->
+      <!-- =================================================================== -->
+      <!-- NOVA SEÇÃO: DEPOIMENTOS EM TEMPO REAL SALVOS NO BANCO SQLite -->
+      <!-- =================================================================== -->
+      <div class="mb-12 max-w-2xl mx-auto">
+        <h3
+          class="text-lg font-bold mb-4 text-dark-text dark:text-white text-center"
+        >
+          💝 O que nossos clientes dizem no site:
+        </h3>
+
+        <div id="lista-feedbacks" class="space-y-4">
+          <!-- Os feedbacks do banco vão aparecer aqui dentro magicamente! -->
+        </div>
+      </div>
+      <!-- =================================================================== -->
+
+      <!-- PAINEL DE DEPOIMENTOS EXISTENTES (ESTÁTICOS) -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
         <!-- Depoimento 1 -->
         <div
@@ -247,23 +263,7 @@
       &copy; 2026 Doce Sabor by Dai. Todos os direitos reservados.
     </footer>
 
-    <!-- SCRIPT DE ENVIO SEGURO PARA O SEU WHATSAPP -->
-    <script>
-      function enviarFeedback(event) {
-        event.preventDefault();
-
-        const nome = document.getElementById("nome").value;
-        const sabor = document.getElementById("sabor").value;
-        const nota = document.getElementById("nota").value;
-        const mensagem = document.getElementById("mensagem").value;
-
-        const textoWhatsApp = `Olá Dai! Deixei um Feedback pelo site:%0A%0A*Nome:* ${nome}%0A*Produto:* ${sabor}%0A*Nota:* ${nota}%0A*Depoimento:* ${mensagem}`;
-
-        window.open(
-          `https://wa.me/5567992086035?text=${textoWhatsApp}`,
-          "_blank",
-        );
-      }
-    </script>
+    <!-- IMPORTAÇÃO DO SEU SCRIPT CENTRALIZADO -->
+    <script src="script.js"></script>
   </body>
 </html>
