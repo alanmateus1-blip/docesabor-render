@@ -38,7 +38,6 @@
         },
       };
 
-      // VERIFICAÇÃO INSTANTÂNEA DO TEMA SALVO (Evita que a tela pisque branca ao carregar)
       if (
         localStorage.getItem("color-theme") === "dark" ||
         (!("color-theme" in localStorage) &&
@@ -52,70 +51,46 @@
   </head>
 
   <body
-    class="font-open-sans bg-cream-bg text-dark-text dark:bg-dark-bg dark:text-dark-text-light antialiased transition-colors duration-500"
+    class="font-open-sans bg-cream-bg text-dark-text dark:bg-dark-bg dark:text-dark-text-light antialiased transition-colors duration-500 min-h-screen flex flex-col justify-between"
   >
-    <!-- CABEÇALHO SIMPLIFICADO -->
     <header
-      class="w-full bg-cream-bg dark:bg-dark-bg shadow-sm py-4 transition-colors duration-500"
+      class="container mx-auto px-4 py-4 flex items-center justify-between"
     >
-      <div class="container mx-auto px-4 flex items-center justify-between">
-        <a href="index.html" class="flex items-center gap-3">
-          <img
-            src="imagens/novo-logo.jpg.jfif"
-            alt="Logo"
-            class="w-12 h-12 rounded-xl object-cover border border-delicate-pink/30"
-          />
-          <span
-            class="text-2xl font-dancing-script font-bold text-tiffany-blue dark:text-dark-tiffany-blue"
-            >Doce Sabor by Dai</span
-          >
-        </a>
-        <a
-          href="index.html"
-          class="text-sm font-semibold text-tiffany-blue dark:text-dark-tiffany-blue hover:text-delicate-pink dark:hover:text-pink-300 transition flex items-center gap-1"
+      <a href="index.html" class="flex items-center gap-3">
+        <img
+          src="imagens/novo-logo.jpg.jfif"
+          alt="Logo"
+          class="w-12 h-12 rounded-xl object-cover border border-delicate-pink/30 shadow-sm"
+        />
+        <span
+          class="text-2xl font-dancing-script font-bold text-tiffany-blue dark:text-dark-tiffany-blue"
+          >Doce Sabor by Dai</span
         >
-          ← Voltar para a Página Principal
-        </a>
-      </div>
+      </a>
+      <a
+        href="index.html"
+        class="bg-tiffany-blue hover:bg-delicate-pink text-white px-4 py-2 rounded-full font-bold text-sm shadow-md transition duration-300"
+      >
+        ← Voltar para Home
+      </a>
     </header>
 
-    <main class="container mx-auto px-4 py-12 max-w-4xl">
-      <!-- TITULO DA PÁGINA -->
+    <main class="container mx-auto px-4 py-12 max-w-4xl flex-grow">
       <div class="text-center space-y-3 mb-12">
         <h1
           class="text-4xl md:text-5xl font-dancing-script font-bold text-tiffany-blue dark:text-dark-tiffany-blue"
         >
           O carinho dos nossos clientes
         </h1>
-        <p
-          class="text-sm md:text-base text-dark-text/70 dark:text-dark-text-light/80 max-w-xl mx-auto"
-        >
-          Nada nos deixa mais felizes do que saber que fizemos parte de um
-          momento doce na sua vida. Veja o que dizem por aqui:
-        </p>
       </div>
 
-      <!-- =================================================================== -->
-      <!-- NOVA SEÇÃO: DEPOIMENTOS EM TEMPO REAL SALVOS NO BANCO SQLite -->
-      <!-- =================================================================== -->
-      <div class="mb-12 max-w-2xl mx-auto">
-        <h3
-          class="text-lg font-bold mb-4 text-dark-text dark:text-white text-center"
-        >
-          💝 O que nossos clientes dizem no site:
-        </h3>
-
-        <div id="lista-feedbacks" class="space-y-4">
-          <!-- Os feedbacks do banco vão aparecer aqui dentro magicamente! -->
-        </div>
-      </div>
-      <!-- =================================================================== -->
-
-      <!-- PAINEL DE DEPOIMENTOS EXISTENTES (ESTÁTICOS) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-        <!-- Depoimento 1 -->
+      <!-- GRADE DE COMENTÁRIOS (ID 'listaComentarios' é onde novos itens vão aparecer) -->
+      <div
+        id="listaComentarios"
+        class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16"
+      >
         <div
-          class="bg-white dark:bg-neutral-800 p-6 rounded-3xl shadow-sm border border-delicate-pink/10 space-y-3 transition-colors duration-500"
+          class="bg-white dark:bg-neutral-800 p-6 rounded-3xl shadow-sm border border-delicate-pink/10 space-y-3"
         >
           <div class="flex items-center justify-between">
             <h3 class="font-bold text-dark-text dark:text-white">
@@ -126,144 +101,114 @@
           <p
             class="text-xs text-tiffany-blue dark:text-dark-tiffany-blue font-semibold"
           >
-            Sabor Escolhido: Leite
+            Sabor: Leite
           </p>
           <p
             class="text-sm text-dark-text/80 dark:text-dark-text-light/80 italic"
           >
-            "As bolachinhas de leite são simplesmente perfeitas! Comprei para
-            dar de lembrancinha na empresa e todo mundo ficou encantado com o
-            capricho das mensagens."
-          </p>
-        </div>
-
-        <!-- Depoimento 2 -->
-        <div
-          class="bg-white dark:bg-neutral-800 p-6 rounded-3xl shadow-sm border border-delicate-pink/10 space-y-3 transition-colors duration-500"
-        >
-          <div class="flex items-center justify-between">
-            <h3 class="font-bold text-dark-text dark:text-white">
-              Carlos Eduardo
-            </h3>
-            <span class="text-yellow-400 text-sm">⭐⭐⭐⭐⭐</span>
-          </div>
-          <p
-            class="text-xs text-tiffany-blue dark:text-dark-tiffany-blue font-semibold"
-          >
-            Sabor Escolhido: Café e Paçoquinha
-          </p>
-          <p
-            class="text-sm text-dark-text/80 dark:text-dark-text-light/80 italic"
-          >
-            "Atendimento nota mil da Dai. A bolachinha de café derrete na boca e
-            combina muito bem com o café da tarde. Virei cliente fiel!"
+            "As bolachinhas de leite são simplesmente perfeitas!"
           </p>
         </div>
       </div>
 
-      <!-- FORMULÁRIO DE FEEDBACK -->
       <div
-        class="bg-soft-cream dark:bg-dark-soft-cream rounded-4xl p-8 md:p-12 shadow-sm max-w-2xl mx-auto transition-colors duration-500"
+        class="bg-soft-cream dark:bg-dark-soft-cream rounded-4xl p-8 md:p-12 shadow-sm max-w-2xl mx-auto"
       >
         <h2
           class="text-3xl font-dancing-script text-center text-tiffany-blue dark:text-dark-tiffany-blue mb-6"
         >
-          Envie o seu Depoimento ou Sugestão
+          Envie seu Depoimento
         </h2>
-
         <form
           id="feedbackForm"
-          onsubmit="enviarFeedback(event)"
+          onsubmit="processarFeedback(event)"
           class="space-y-4"
         >
-          <div>
-            <label
-              class="block text-sm font-semibold mb-1 text-dark-text dark:text-dark-text-light"
-              >Seu Nome:</label
-            >
-            <input
-              type="text"
-              id="nome"
-              required
-              class="w-full px-4 py-2 rounded-2xl border border-delicate-pink/30 bg-white dark:bg-neutral-800 text-dark-text dark:text-white focus:outline-none focus:border-tiffany-blue"
-              placeholder="Ex: Maria Souza"
-            />
-          </div>
-
-          <div>
-            <label
-              class="block text-sm font-semibold mb-1 text-dark-text dark:text-dark-text-light"
-              >Qual produto/sabor você comprou?</label
-            >
-            <input
-              type="text"
-              id="sabor"
-              class="w-full px-4 py-2 rounded-2xl border border-delicate-pink/30 bg-white dark:bg-neutral-800 text-dark-text dark:text-white focus:outline-none focus:border-tiffany-blue"
-              placeholder="Ex: Bolachinha de Leite / Especial de Natal"
-            />
-          </div>
-
-          <div>
-            <label
-              class="block text-sm font-semibold mb-1 text-dark-text dark:text-dark-text-light"
-              >Sua Nota:</label
-            >
-            <select
-              id="nota"
-              class="w-full px-4 py-2 rounded-2xl border border-delicate-pink/30 bg-white dark:bg-neutral-800 text-dark-text dark:text-white focus:outline-none focus:border-tiffany-blue"
-            >
-              <option
-                value="⭐⭐⭐⭐⭐"
-                class="bg-white dark:bg-neutral-800 text-dark-text dark:text-white"
-              >
-                ⭐⭐⭐⭐⭐ (Excelente)
-              </option>
-              <option
-                value="⭐⭐⭐⭐"
-                class="bg-white dark:bg-neutral-800 text-dark-text dark:text-white"
-              >
-                ⭐⭐⭐⭐ (Muito Bom)
-              </option>
-              <option
-                value="⭐⭐⭐"
-                class="bg-white dark:bg-neutral-800 text-dark-text dark:text-white"
-              >
-                ⭐⭐⭐ (Bom)
-              </option>
-            </select>
-          </div>
-
-          <div>
-            <label
-              class="block text-sm font-semibold mb-1 text-dark-text dark:text-dark-text-light"
-              >Sua Mensagem (Satisfação ou Sugestão):</label
-            >
-            <textarea
-              id="mensagem"
-              rows="4"
-              required
-              class="w-full px-4 py-2 rounded-2xl border border-delicate-pink/30 bg-white dark:bg-neutral-800 text-dark-text dark:text-white focus:outline-none focus:border-tiffany-blue"
-              placeholder="Conte como foi sua experiência com nosso sabor e atendimento..."
-            ></textarea>
-          </div>
-
+          <input
+            type="text"
+            id="nome"
+            required
+            class="w-full px-4 py-2 rounded-2xl border border-delicate-pink/30 bg-white dark:bg-neutral-800"
+            placeholder="Seu Nome"
+          />
+          <input
+            type="text"
+            id="sabor"
+            class="w-full px-4 py-2 rounded-2xl border border-delicate-pink/30 bg-white dark:bg-neutral-800"
+            placeholder="Produto/Sabor"
+          />
+          <select
+            id="nota"
+            class="w-full px-4 py-2 rounded-2xl border border-delicate-pink/30 bg-white dark:bg-neutral-800"
+          >
+            <option value="5">⭐⭐⭐⭐⭐ (Excelente)</option>
+            <option value="4">⭐⭐⭐⭐ (Muito Bom)</option>
+            <option value="3">⭐⭐⭐ (Bom)</option>
+          </select>
+          <textarea
+            id="mensagem"
+            rows="4"
+            required
+            class="w-full px-4 py-2 rounded-2xl border border-delicate-pink/30 bg-white dark:bg-neutral-800"
+            placeholder="Sua mensagem..."
+          ></textarea>
           <button
             type="submit"
-            class="w-full bg-tiffany-blue hover:bg-delicate-pink text-white font-bold py-3 rounded-full shadow-md transition duration-300 mt-2 cursor-pointer"
+            class="w-full bg-tiffany-blue hover:bg-delicate-pink text-white font-bold py-3 rounded-full transition"
           >
-            🚀 Enviar para a Dai via WhatsApp
+            🚀 Enviar para a Dai
           </button>
         </form>
       </div>
     </main>
 
     <footer
-      class="py-8 text-center text-xs text-dark-text/60 dark:text-dark-text-light/60 transition-colors duration-500"
+      class="bg-[#FFF8DC] dark:bg-dark-soft-cream py-6 text-center border-t border-delicate-pink/20 transition-colors duration-500"
     >
-      &copy; 2026 Doce Sabor by Dai. Todos os direitos reservados.
+      <p class="text-xs text-dark-text/70 dark:text-dark-text-light/70">
+        &copy; 2026 Doce Sabor by Dai. Todos os direitos reservados.
+      </p>
     </footer>
 
-    <!-- IMPORTAÇÃO DO SEU SCRIPT CENTRALIZADO -->
-    <script src="script.js"></script>
+    <script>
+      function processarFeedback(event) {
+        event.preventDefault();
+
+        // Pega os dados
+        const nome = document.getElementById("nome").value;
+        const sabor = document.getElementById("sabor").value;
+        const notaVal = document.getElementById("nota").value;
+        const mensagem = document.getElementById("mensagem").value;
+
+        // Cria visualmente a nota em estrelas
+        const estrela = String.fromCodePoint(11088);
+        const notaEstrelas = estrela.repeat(parseInt(notaVal));
+
+        // 1. ADICIONA O COMENTÁRIO NA TELA
+        const lista = document.getElementById("listaComentarios");
+        const novoComentario = document.createElement("div");
+        novoComentario.className =
+          "bg-white dark:bg-neutral-800 p-6 rounded-3xl shadow-sm border border-delicate-pink/10 space-y-3";
+        novoComentario.innerHTML = `
+          <div class="flex items-center justify-between">
+            <h3 class="font-bold text-dark-text dark:text-white">${nome}</h3>
+            <span class="text-yellow-400 text-sm">${notaEstrelas}</span>
+          </div>
+          <p class="text-xs text-tiffany-blue dark:text-dark-tiffany-blue font-semibold">Sabor: ${sabor}</p>
+          <p class="text-sm text-dark-text/80 dark:text-dark-text-light/80 italic">"${mensagem}"</p>
+        `;
+        lista.appendChild(novoComentario);
+
+        // 2. ENVIA PARA O WHATSAPP
+        const textoWhatsApp = `Olá Dai! Deixei um Feedback pelo site:\n\n*Nome:* ${nome}\n*Produto:* ${sabor}\n*Nota:* ${notaEstrelas}\n*Depoimento:* ${mensagem}`;
+        window.open(
+          `https://api.whatsapp.com/send?phone=5567992086035&text=${encodeURIComponent(textoWhatsApp)}`,
+          "_blank",
+        );
+
+        // Limpa o formulário
+        document.getElementById("feedbackForm").reset();
+      }
+    </script>
   </body>
 </html>
