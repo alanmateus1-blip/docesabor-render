@@ -84,31 +84,14 @@
         </h1>
       </div>
 
-      <!-- GRADE DE COMENTÁRIOS (ID 'listaComentarios' é onde novos itens vão aparecer) -->
+      <!-- GRADE DE COMENTÁRIOS (Puxados dinamicamente do servidor/Supabase) -->
       <div
         id="listaComentarios"
         class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16"
       >
-        <div
-          class="bg-white dark:bg-neutral-800 p-6 rounded-3xl shadow-sm border border-delicate-pink/10 space-y-3"
-        >
-          <div class="flex items-center justify-between">
-            <h3 class="font-bold text-dark-text dark:text-white">
-              Mariana Silva
-            </h3>
-            <span class="text-yellow-400 text-sm">⭐⭐⭐⭐⭐</span>
-          </div>
-          <p
-            class="text-xs text-tiffany-blue dark:text-dark-tiffany-blue font-semibold"
-          >
-            Sabor: Leite
-          </p>
-          <p
-            class="text-sm text-dark-text/80 dark:text-dark-text-light/80 italic"
-          >
-            "As bolachinhas de leite são simplesmente perfeitas!"
-          </p>
-        </div>
+        <p class="text-center text-gray-500 dark:text-gray-400 col-span-2">
+          Carregando depoimentos...
+        </p>
       </div>
 
       <div
@@ -171,44 +154,92 @@
     </footer>
 
     <script>
-      function processarFeedback(event) {
+      // Função para buscar os feedbacks salvos no banco de dados
+      async function carregarFeedbacks() {
+        const lista = document.getElementById("listaComentarios");
+        try {
+          const resposta = await fetch("/api/feedbacks");
+          const feedbacks = await resposta.json();
+
+          lista.innerHTML = "";
+
+          if (!feedbacks || feedbacks.length === 0) {
+            lista.innerHTML = `<p class='text-center text-gray-500 dark:text-gray-400 col-span-2'>Ainda não há feedbacks cadastrados.</p>`;
+            return;
+          }
+
+          feedbacks.forEach((f) => {
+            const notaVal = f.estrelas || 5;
+            const notaEstrelas = "⭐".repeat(notaVal);
+
+            const div = document.createElement("div");
+            div.className =
+              "bg-white dark:bg-neutral-800 p-6 rounded-3xl shadow-sm border border-delicate-pink/10 space-y-3";
+            div.innerHTML = `
+              <div class="flex items-center justify-between">
+                <h3 class="font-bold text-dark-text dark:text-white">${f.nome}</h3>
+                <span class="text-yellow-400 text-sm">${notaEstrelas}</span>
+              </div>
+              <p class="text-xs text-tiffany-blue dark:text-dark-tiffany-blue font-semibold">Sabor: ${f.sabor || "Não informado"}</p>
+              <p class="text-sm text-dark-text/80 dark:text-dark-text-light/80 italic">"${f.comentario}"</p>
+            `;
+            lista.appendChild(div);
+          });
+        } catch (erro) {
+          console.error("Erro ao carregar feedbacks:", erro);
+          lista.innerHTML = `<p class='text-center text-red-500 col-span-2'>Erro ao carregar os depoimentos.</p>`;
+        }
+      }
+
+      // Função para enviar o feedback para o servidor e abrir o WhatsApp
+      async function processarFeedback(event) {
         event.preventDefault();
 
-        // Pega os dados
         const nome = document.getElementById("nome").value;
-        const sabor = document.getElementById("sabor").value;
-        const notaVal = document.getElementById("nota").value;
+        const sabor = document.getElementById("sabor").value || "Não informado";
+        const notaVal = parseInt(document.getElementById("nota").value);
         const mensagem = document.getElementById("mensagem").value;
 
-        // Cria visualmente a nota em estrelas
-        const estrela = String.fromCodePoint(11088);
-        const notaEstrelas = estrela.repeat(parseInt(notaVal));
+        const notaEstrelas = "⭐".repeat(notaVal);
 
-        // 1. ADICIONA O COMENTÁRIO NA TELA
-        const lista = document.getElementById("listaComentarios");
-        const novoComentario = document.createElement("div");
-        novoComentario.className =
-          "bg-white dark:bg-neutral-800 p-6 rounded-3xl shadow-sm border border-delicate-pink/10 space-y-3";
-        novoComentario.innerHTML = `
-          <div class="flex items-center justify-between">
-            <h3 class="font-bold text-dark-text dark:text-white">${nome}</h3>
-            <span class="text-yellow-400 text-sm">${notaEstrelas}</span>
-          </div>
-          <p class="text-xs text-tiffany-blue dark:text-dark-tiffany-blue font-semibold">Sabor: ${sabor}</p>
-          <p class="text-sm text-dark-text/80 dark:text-dark-text-light/80 italic">"${mensagem}"</p>
-        `;
-        lista.appendChild(novoComentario);
+        const dadosParaBanco = {
+          nome: nome,
+          comentario: mensagem,
+          sabor: sabor,
+          estrelas: notaVal,
+        };
 
-        // 2. ENVIA PARA O WHATSAPP
-        const textoWhatsApp = `Olá Dai! Deixei um Feedback pelo site:\n\n*Nome:* ${nome}\n*Produto:* ${sabor}\n*Nota:* ${notaEstrelas}\n*Depoimento:* ${mensagem}`;
-        window.open(
-          `https://api.whatsapp.com/send?phone=5567992086035&text=${encodeURIComponent(textoWhatsApp)}`,
-          "_blank",
-        );
+        try {
+          const resposta = await fetch("/api/feedbacks", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(dadosParaBanco),
+          });
 
-        // Limpa o formulário
-        document.getElementById("feedbackForm").reset();
+          if (resposta.ok) {
+            // Abre o WhatsApp com a mensagem formatada
+            const textoWhatsApp = `Olá Dai! Deixei um Feedback pelo site:\n\n*Nome:* ${nome}\n*Produto:* ${sabor}\n*Nota:* ${notaEstrelas}\n*Depoimento:* ${mensagem}`;
+            window.open(
+              `https://api.whatsapp.com/send?phone=5567992086035&text=${encodeURIComponent(textoWhatsApp)}`,
+              "_blank",
+            );
+
+            alert("Feedback registrado e salvo com sucesso!");
+            document.getElementById("feedbackForm").reset();
+
+            // Atualiza a tela instantaneamente com o novo comentário
+            carregarFeedbacks();
+          } else {
+            alert("Erro ao salvar o feedback no banco de dados.");
+          }
+        } catch (erro) {
+          console.error("Erro ao enviar feedback:", erro);
+          alert("Não foi possível conectar ao servidor.");
+        }
       }
+
+      // Carrega os feedbacks assim que a página abre
+      document.addEventListener("DOMContentLoaded", carregarFeedbacks);
     </script>
   </body>
 </html>
