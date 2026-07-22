@@ -35,13 +35,13 @@ app.post("/api/feedbacks", (req, res) => {
 
 // 2. ROTA PARA BUSCAR OS FEEDBACKS (GET)
 app.get("/api/feedbacks", (req, res) => {
-  const query = `SELECT * FROM feedbacks ORDER BY criado_em DESC`;
+  const query = `SELECT * FROM feedbacks ORDER BY criado_em DESC LIMIT 10`;
 
   db.all(query, [], (err, rows) => {
     if (err) {
       return res.status(500).json({ erro: err.message });
     }
-    res.json(rows); // Envia os feedbacks em formato de lista (JSON) para o site ler
+    res.json(rows);
   });
 });
 

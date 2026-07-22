@@ -3,9 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Especial de Páscoa - Doce Sabor by Dai. Bolachas artesanais decoradas para a Páscoa." />
+    <meta
+      name="description"
+      content="Especial de Páscoa - Doce Sabor by Dai. Bolachas artesanais decoradas para a Páscoa."
+    />
     <title>Especial de Páscoa | Doce Sabor by Dai</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       // Script executado imediatamente para evitar o "piscar" de fundo claro no carregamento
@@ -47,15 +53,28 @@
       };
     </script>
   </head>
-  <body class="font-open-sans bg-cream-bg text-dark-text dark:bg-dark-bg dark:text-dark-text-light antialiased min-h-screen flex flex-col justify-between transition-colors duration-500">
-    
+  <body
+    class="font-open-sans bg-cream-bg text-dark-text dark:bg-dark-bg dark:text-dark-text-light antialiased min-h-screen flex flex-col justify-between transition-colors duration-500"
+  >
     <!-- Cabeçalho Simples -->
-    <header class="container mx-auto px-4 py-4 flex items-center justify-between">
+    <header
+      class="container mx-auto px-4 py-4 flex items-center justify-between"
+    >
       <a href="index.html" class="flex items-center gap-3">
-        <img src="imagens/novo-logo.jpg.jfif" alt="Logo" class="w-12 h-12 rounded-xl object-cover border border-delicate-pink shadow-sm" />
-        <span class="text-2xl font-dancing-script font-bold text-tiffany-blue dark:text-dark-tiffany-blue">Doce Sabor by Dai</span>
+        <img
+          src="imagens/novo-logo.jpg.jfif"
+          alt="Logo"
+          class="w-12 h-12 rounded-xl object-cover border border-delicate-pink shadow-sm"
+        />
+        <span
+          class="text-2xl font-dancing-script font-bold text-tiffany-blue dark:text-dark-tiffany-blue"
+          >Doce Sabor by Dai</span
+        >
       </a>
-      <a href="index.html" class="bg-tiffany-blue hover:bg-delicate-pink text-white px-4 py-2 rounded-full font-bold text-sm shadow-md transition duration-300">
+      <a
+        href="index.html"
+        class="bg-tiffany-blue hover:bg-delicate-pink text-white px-4 py-2 rounded-full font-bold text-sm shadow-md transition duration-300"
+      >
         ← Voltar para Home
       </a>
     </header>
@@ -63,67 +82,457 @@
     <main class="container mx-auto px-4 py-8 flex-grow">
       <!-- Título da Coleção -->
       <div class="text-center mb-12 space-y-3">
-        <span class="text-xs uppercase tracking-widest font-semibold text-delicate-pink bg-delicate-pink/20 dark:bg-neutral-800 dark:text-dark-delicate-pink px-4 py-1.5 rounded-full inline-block">
+        <span
+          class="text-xs uppercase tracking-widest font-semibold text-delicate-pink bg-delicate-pink/20 dark:bg-neutral-800 dark:text-dark-delicate-pink px-4 py-1.5 rounded-full inline-block"
+        >
           Coleção Sazonal
         </span>
-        <h1 class="text-4xl md:text-5xl font-dancing-script font-bold text-tiffany-blue dark:text-dark-tiffany-blue flex items-center justify-center gap-2">
+        <h1
+          class="text-4xl md:text-5xl font-dancing-script font-bold text-tiffany-blue dark:text-dark-tiffany-blue flex items-center justify-center gap-2"
+        >
           🐰 Especial de Páscoa
         </h1>
-        <p class="text-sm md:text-base text-dark-text/70 dark:text-dark-text-light/80 max-w-xl mx-auto">
-          Deixe seu domingo de Páscoa muito mais saboroso e divertido com nossas bolachinhas artesanais decoradas em formatos fofos.
+        <p
+          class="text-sm md:text-base text-dark-text/70 dark:text-dark-text-light/80 max-w-xl mx-auto"
+        >
+          Deixe seu domingo de Páscoa muito mais saboroso e divertido com nossas
+          bolachinhas artesanais decoradas em formatos fofos.
         </p>
       </div>
 
-      <!-- Grid de Produtos -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-16">
+      <!-- Grid de Produtos (Galeria Completa de Pascoa) -->
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16"
+      >
         <!-- Item 1 -->
-        <div class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500">
-          <div class="w-full h-48 rounded-2xl overflow-hidden mb-3 bg-neutral-100">
-            <img src="imagens/pascoa-coelhinho.jpg" alt="Kit Coelhinho da Páscoa" class="w-full h-full object-cover" onerror="this.src='imagens/mascotes.jpg.jfif'" />
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/pascoa/pascoa-01.jpg', 'Modelo Pascoa 01')
+            "
+          >
+            <img
+              src="imagens/pascoa/pascoa-01.jpg"
+              alt="Modelo Pascoa 01"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
           </div>
-          <h3 class="font-bold text-dark-text dark:text-white">Kit Coelhinho da Páscoa</h3>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo Pascoa 01
+          </h3>
         </div>
 
         <!-- Item 2 -->
-        <div class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500">
-          <div class="w-full h-48 rounded-2xl overflow-hidden mb-3 bg-neutral-100">
-            <img src="imagens/pascoa-ovinhos.jpg" alt="Ovos Decorados com Glacê" class="w-full h-full object-cover" onerror="this.src='imagens/mascotes.jpg.jfif'" />
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/pascoa/pascoa-02.jpg', 'Modelo Pascoa 02')
+            "
+          >
+            <img
+              src="imagens/pascoa/pascoa-02.jpg"
+              alt="Modelo Pascoa 02"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
           </div>
-          <h3 class="font-bold text-dark-text dark:text-white">Ovos Decorados com Glacê</h3>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo Pascoa 02
+          </h3>
         </div>
 
         <!-- Item 3 -->
-        <div class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500">
-          <div class="w-full h-48 rounded-2xl overflow-hidden mb-3 bg-neutral-100">
-            <img src="imagens/pascoa-cenourinhas.jpg" alt="Cenourinhas Crocantes" class="w-full h-full object-cover" onerror="this.src='imagens/mascotes.jpg.jfif'" />
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/pascoa/pascoa-03.jpg', 'Modelo Pascoa 03')
+            "
+          >
+            <img
+              src="imagens/pascoa/pascoa-03.jpg"
+              alt="Modelo Pascoa 03"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
           </div>
-          <h3 class="font-bold text-dark-text dark:text-white">Cenourinhas Crocantes</h3>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo Pascoa 03
+          </h3>
         </div>
 
         <!-- Item 4 -->
-        <div class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500">
-          <div class="w-full h-48 rounded-2xl overflow-hidden mb-3 bg-neutral-100">
-            <img src="imagens/pascoa-lembrancinha.jpg" alt="Lembrancinhas de Páscoa" class="w-full h-full object-cover" onerror="this.src='imagens/mascotes.jpg.jfif'" />
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/pascoa/pascoa-04.jpg', 'Modelo Pascoa 04')
+            "
+          >
+            <img
+              src="imagens/pascoa/pascoa-04.jpg"
+              alt="Modelo Pascoa 04"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
           </div>
-          <h3 class="font-bold text-dark-text dark:text-white">Lembrancinhas de Páscoa</h3>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo Pascoa 04
+          </h3>
         </div>
-      </div>
+
+        <!-- Item 5 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/pascoa/pascoa-05.jpg', 'Modelo Pascoa 05')
+            "
+          >
+            <img
+              src="imagens/pascoa/pascoa-05.jpg"
+              alt="Modelo Pascoa 05"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo Pascoa 05
+          </h3>
+        </div>
+
+        <!-- Item 6 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/pascoa/pascoa-06.jpg', 'Modelo Pascoa 06')
+            "
+          >
+            <img
+              src="imagens/pascoa/pascoa-06.jpg"
+              alt="Modelo Pascoa 06"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo Pascoa 06
+          </h3>
+        </div>
+
+        <!-- Item 7 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/pascoa/pascoa-07.jpg', 'Modelo Pascoa 07')
+            "
+          >
+            <img
+              src="imagens/pascoa/pascoa-07.jpg"
+              alt="Modelo Pascoa 07"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo Pascoa 07
+          </h3>
+        </div>
+
+        <!-- Item 8 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/pascoa/pascoa-08.jpg', 'Modelo Pascoa 08')
+            "
+          >
+            <img
+              src="imagens/pascoa/pascoa-08.jpg"
+              alt="Modelo Pascoa 08"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo Pascoa 08
+          </h3>
+        </div>
+
+        <!-- Item 9 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/pascoa/pascoa-09.jpg', 'Modelo Pascoa 09')
+            "
+          >
+            <img
+              src="imagens/pascoa/pascoa-09.jpg"
+              alt="Modelo Pascoa 09"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo Pascoa 09
+          </h3>
+        </div>
+
+        <!-- Item 10 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/pascoa/pascoa-10.jpg', 'Modelo Pascoa 10')
+            "
+          >
+            <img
+              src="imagens/pascoa/pascoa-10.jpg"
+              alt="Modelo Pascoa 10"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo Pascoa 10
+          </h3>
+        </div>
+
+        <!-- Item 11 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/pascoa/pascoa-11.jpg', 'Modelo Pascoa 11')
+            "
+          >
+            <img
+              src="imagens/pascoa/pascoa-11.jpg"
+              alt="Modelo Pascoa 11"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo Pascoa 11
+          </h3>
+        </div>
+
+        <!-- Item 12 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/pascoa/pascoa-12.jpg', 'Modelo Pascoa 12')
+            "
+          >
+            <img
+              src="imagens/pascoa/pascoa-12.jpg"
+              alt="Modelo Pascoa 12"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo Pascoa 12
+          </h3>
+        </div>
+
+        <!-- Item 13 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/pascoa/pascoa-13.jpg', 'Modelo Pascoa 13')
+            "
+          >
+            <img
+              src="imagens/pascoa/pascoa-13.jpg"
+              alt="Modelo Pascoa 13"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo Pascoa 13
+          </h3>
+        </div>
+
+        <!-- Item 14 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/pascoa/pascoa-14.jpg', 'Modelo Pascoa 14')
+            "
+          >
+            <img
+              src="imagens/pascoa/pascoa-14.jpg"
+              alt="Modelo Pascoa 14"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo Pascoa 14
+          </h3>
+        </div>
+	
+	<!-- Item 15 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/pascoa/pascoa-15.jpg', 'Modelo Pascoa 15')
+            "
+          >
+            <img
+              src="imagens/pascoa/pascoa-15.jpg"
+              alt="Modelo Pascoa 15"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo Pascoa 15
+          </h3>
+        </div>
+	
+	<!-- Item 16 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/pascoa/pascoa-16.jpg', 'Modelo Pascoa 16')
+            "
+          >
+            <img
+              src="imagens/pascoa/pascoa-16.jpg"
+              alt="Modelo Pascoa 16"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo Pascoa 16
+          </h3>
+        </div>
+	
+	<!-- Item 17 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/pascoa/pascoa-17.jpg', 'Modelo Pascoa 17')
+            "
+          >
+            <img
+              src="imagens/pascoa/pascoa-17.jpg"
+              alt="Modelo Pascoa 17"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo Pascoa 17
+          </h3>
+        </div>
+	
+	<!-- Item 18 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/pascoa/pascoa-18.jpg', 'Modelo Pascoa 18')
+            "
+          >
+            <img
+              src="imagens/pascoa/pascoa-18.jpg"
+              alt="Modelo Pascoa 18"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo Pascoa 18
+          </h3>
+        </div>
+
 
       <!-- BANNER DE ENCOMENDAS PERSONALIZADAS -->
       <section class="max-w-4xl mx-auto mb-12">
-        <div class="bg-gradient-to-br from-cream-bg to-[#FFF8DC] dark:from-neutral-800 dark:to-neutral-900 p-8 rounded-4xl border-2 border-dashed border-delicate-pink/40 dark:border-dark-tiffany-blue/40 shadow-md text-center space-y-5 transition-colors duration-500">
+        <div
+          class="bg-gradient-to-br from-cream-bg to-[#FFF8DC] dark:from-neutral-800 dark:to-neutral-900 p-8 rounded-4xl border-2 border-dashed border-delicate-pink/40 dark:border-dark-tiffany-blue/40 shadow-md text-center space-y-5 transition-colors duration-500"
+        >
           <div class="text-3xl">💡 🍪 ✨</div>
-          <h3 class="text-2xl md:text-3xl font-dancing-script font-bold text-tiffany-blue dark:text-dark-tiffany-blue">
+          <h3
+            class="text-2xl md:text-3xl font-dancing-script font-bold text-tiffany-blue dark:text-dark-tiffany-blue"
+          >
             Não encontrou o modelo de Páscoa que queria?
           </h3>
-          <p class="text-sm md:text-base text-dark-text/80 dark:text-dark-text-light/95 max-w-2xl mx-auto leading-relaxed">
-            Não se preocupe! Para o seu total agrado e satisfação, <strong class="text-delicate-pink dark:text-dark-delicate-pink">nós encomendamos o carimbo e o cortador exclusivo</strong> para fazer a bolachinha com o formato ou ideia que você desejar! 
+          <p
+            class="text-sm md:text-base text-dark-text/80 dark:text-dark-text-light/95 max-w-2xl mx-auto leading-relaxed"
+          >
+            Não se preocupe! Para o seu total agrado e satisfação,
+            <strong class="text-delicate-pink dark:text-dark-delicate-pink"
+              >nós encomendamos o carimbo e o cortador exclusivo</strong
+            >
+            para fazer a bolachinha com o formato ou ideia que você desejar!
           </p>
-          <p class="text-xs text-dark-text/60 dark:text-dark-text-light/60 italic">
-            Fale conosco, dê sua ideia e nós criamos um modelo único para o seu pedido!
+          <p
+            class="text-xs text-dark-text/60 dark:text-dark-text-light/60 italic"
+          >
+            Fale conosco, dê sua ideia e nós criamos um modelo único para o seu
+            pedido!
           </p>
           <div class="pt-2">
-            <a href="https://wa.me/5567992086035?text=Olá%20Dai!%20Estava%20olhando%20o%20cardápio%20de%20Páscoa%20e%20gostaria%20de%20saber%20sobre%20um%20modelo%20ou%20formato%20personalizado..." target="_blank" class="inline-block bg-tiffany-blue hover:bg-delicate-pink text-white font-bold px-8 py-3 rounded-full shadow-md transition duration-300">
+            <a
+              href="https://wa.me/5567992086035?text=Olá%20Dai!%20Estava%20olhando%20o%20cardápio%20de%20Páscoa%20e%20gostaria%20de%20saber%20sobre%20um%20modelo%20ou%20formato%20personalizado..."
+              target="_blank"
+              class="inline-block bg-tiffany-blue hover:bg-delicate-pink text-white font-bold px-8 py-3 rounded-full shadow-md transition duration-300"
+            >
               💬 Encomendar Tema Páscoa Personalizado
             </a>
           </div>
@@ -131,8 +540,12 @@
       </section>
     </main>
 
-    <footer class="bg-[#FFF8DC] dark:bg-dark-soft-cream py-6 text-center border-t border-delicate-pink/20 transition-colors duration-500">
-      <p class="text-xs text-dark-text/70 dark:text-dark-text-light/70">&copy; 2026 Doce Sabor by Dai. Todos os direitos reservados.</p>
+    <footer
+      class="bg-[#FFF8DC] dark:bg-dark-soft-cream py-6 text-center border-t border-delicate-pink/20 transition-colors duration-500"
+    >
+      <p class="text-xs text-dark-text/70 dark:text-dark-text-light/70">
+        &copy; 2026 Doce Sabor by Dai. Todos os direitos reservados.
+      </p>
     </footer>
 
     <script>
@@ -147,5 +560,49 @@
         document.documentElement.classList.remove("dark");
       }
     </script>
+
+    <!-- MODAL DE ZOOM DA IMAGEM -->
+    <div
+      id="imageModal"
+      class="fixed inset-0 z-50 hidden bg-black/80 flex items-center justify-center p-4 cursor-pointer"
+      onclick="fecharModal()"
+    >
+      <div
+        class="relative max-w-4xl max-h-full text-center"
+        onclick="event.stopPropagation()"
+      >
+        <button
+          onclick="fecharModal()"
+          class="absolute -top-10 right-0 text-white text-3xl font-bold hover:text-delicate-pink"
+        >
+          &times;
+        </button>
+        <img
+          id="modalImg"
+          src=""
+          alt="Zoom da Bolachinha"
+          class="max-w-full max-h-[80vh] rounded-2xl object-contain shadow-2xl mx-auto"
+        />
+        <p id="modalCaption" class="text-white mt-4 font-bold text-xl"></p>
+      </div>
+    </div>
+
+    <script>
+      function abrirModal(src, titulo) {
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImg");
+        const modalCaption = document.getElementById("modalCaption");
+
+        modalImg.src = src;
+        modalCaption.textContent = titulo;
+        modal.classList.remove("hidden");
+      }
+
+      function fecharModal() {
+        const modal = document.getElementById("imageModal");
+        modal.classList.add("hidden");
+      }
+    </script>
+
   </body>
 </html>

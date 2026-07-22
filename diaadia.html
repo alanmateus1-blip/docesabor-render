@@ -3,9 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Outros e Dia a Dia - Doce Sabor by Dai. Deliciosas bolachas artesanais amanteigadas prontas para acompanhar seu café ou chá da tarde." />
+    <meta
+      name="description"
+      content="Outros e Dia a Dia - Doce Sabor by Dai. Deliciosas bolachas artesanais amanteigadas prontas para acompanhar seu café ou chá da tarde."
+    />
     <title>Outros / Dia a Dia | Doce Sabor by Dai</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       if (
@@ -46,15 +52,28 @@
       };
     </script>
   </head>
-  <body class="font-open-sans bg-cream-bg text-dark-text dark:bg-dark-bg dark:text-dark-text-light antialiased min-h-screen flex flex-col justify-between transition-colors duration-500">
-    
+  <body
+    class="font-open-sans bg-cream-bg text-dark-text dark:bg-dark-bg dark:text-dark-text-light antialiased min-h-screen flex flex-col justify-between transition-colors duration-500"
+  >
     <!-- Cabeçalho Simples -->
-    <header class="container mx-auto px-4 py-4 flex items-center justify-between">
+    <header
+      class="container mx-auto px-4 py-4 flex items-center justify-between"
+    >
       <a href="index.html" class="flex items-center gap-3">
-        <img src="imagens/novo-logo.jpg.jfif" alt="Logo" class="w-12 h-12 rounded-xl object-cover border border-delicate-pink shadow-sm" />
-        <span class="text-2xl font-dancing-script font-bold text-tiffany-blue dark:text-dark-tiffany-blue">Doce Sabor by Dai</span>
+        <img
+          src="imagens/novo-logo.jpg.jfif"
+          alt="Logo"
+          class="w-12 h-12 rounded-xl object-cover border border-delicate-pink shadow-sm"
+        />
+        <span
+          class="text-2xl font-dancing-script font-bold text-tiffany-blue dark:text-dark-tiffany-blue"
+          >Doce Sabor by Dai</span
+        >
       </a>
-      <a href="index.html" class="bg-tiffany-blue hover:bg-delicate-pink text-white px-4 py-2 rounded-full font-bold text-sm shadow-md transition duration-300">
+      <a
+        href="index.html"
+        class="bg-tiffany-blue hover:bg-delicate-pink text-white px-4 py-2 rounded-full font-bold text-sm shadow-md transition duration-300"
+      >
         ← Voltar para Home
       </a>
     </header>
@@ -62,67 +81,848 @@
     <main class="container mx-auto px-4 py-8 flex-grow">
       <!-- Título da Coleção -->
       <div class="text-center mb-12 space-y-3">
-        <span class="text-xs uppercase tracking-widest font-semibold text-delicate-pink bg-delicate-pink/20 dark:bg-neutral-800 dark:text-dark-delicate-pink px-4 py-1.5 rounded-full inline-block">
+        <span
+          class="text-xs uppercase tracking-widest font-semibold text-delicate-pink bg-delicate-pink/20 dark:bg-neutral-800 dark:text-dark-delicate-pink px-4 py-1.5 rounded-full inline-block"
+        >
           Delícias para Qualquer Hora
         </span>
-        <h1 class="text-4xl md:text-5xl font-dancing-script font-bold text-tiffany-blue dark:text-dark-tiffany-blue flex items-center justify-center gap-2">
+        <h1
+          class="text-4xl md:text-5xl font-dancing-script font-bold text-tiffany-blue dark:text-dark-tiffany-blue flex items-center justify-center gap-2"
+        >
           🌸 Outros / Dia a Dia
         </h1>
-        <p class="text-sm md:text-base text-dark-text/70 dark:text-dark-text-light/80 max-w-xl mx-auto">
-          Adoce sua rotina, monte um café da tarde especial ou presenteie alguém sem precisar de datas comemorativas específicas!
+        <p
+          class="text-sm md:text-base text-dark-text/70 dark:text-dark-text-light/80 max-w-xl mx-auto"
+        >
+          Adoce sua rotina, monte um café da tarde especial ou presenteie alguém
+          sem precisar de datas comemorativas específicas!
         </p>
       </div>
 
-      <!-- Grid de Produtos -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-16">
+<!-- Grid de Produtos (Galeria Completa de Pascoa) -->
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16"
+      >
         <!-- Item 1 -->
-        <div class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500">
-          <div class="w-full h-48 rounded-2xl overflow-hidden mb-3 bg-neutral-100">
-            <img src="imagens/dia-amanteigadas.jpg" alt="Bolachas Amanteigadas Simples" class="w-full h-full object-cover" onerror="this.src='imagens/mascotes.jpg.jfif'" />
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-01.jpg', 'Modelo DiaDia 01')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-01.jpg"
+              alt="Modelo DiaDia 01"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
           </div>
-          <h3 class="font-bold text-dark-text dark:text-white">Amanteigadas Clássicas</h3>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 01
+          </h3>
         </div>
 
         <!-- Item 2 -->
-        <div class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500">
-          <div class="w-full h-48 rounded-2xl overflow-hidden mb-3 bg-neutral-100">
-            <img src="imagens/dia-gotas.jpg" alt="Gotas de Chocolate" class="w-full h-full object-cover" onerror="this.src='imagens/mascotes.jpg.jfif'" />
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-02.jpg', 'Modelo DiaDia 02')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-02.jpg"
+              alt="Modelo DiaDia 02"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
           </div>
-          <h3 class="font-bold text-dark-text dark:text-white">Gotas com Chocolate</h3>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 02
+          </h3>
         </div>
 
         <!-- Item 3 -->
-        <div class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500">
-          <div class="w-full h-48 rounded-2xl overflow-hidden mb-3 bg-neutral-100">
-            <img src="imagens/dia-potinhos.jpg" alt="Potes Decorativos" class="w-full h-full object-cover" onerror="this.src='imagens/mascotes.jpg.jfif'" />
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-03.jpg', 'Modelo DiaDia 03')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-03.jpg"
+              alt="Modelo DiaDia 03"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
           </div>
-          <h3 class="font-bold text-dark-text dark:text-white">Potinhos para Café</h3>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 03
+          </h3>
         </div>
 
         <!-- Item 4 -->
-        <div class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500">
-          <div class="w-full h-48 rounded-2xl overflow-hidden mb-3 bg-neutral-100">
-            <img src="imagens/dia-flores.jpg" alt="Flores Decoradas Simples" class="w-full h-full object-cover" onerror="this.src='imagens/mascotes.jpg.jfif'" />
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-04.jpg', 'Modelo DiaDia 04')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-04.jpg"
+              alt="Modelo DiaDia 04"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
           </div>
-          <h3 class="font-bold text-dark-text dark:text-white">Flores & Formas Delicadas</h3>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 04
+          </h3>
         </div>
-      </div>
+
+        <!-- Item 5 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-05.jpg', 'Modelo DiaDia 05')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-05.jpg"
+              alt="Modelo DiaDia 05"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 05
+          </h3>
+        </div>
+
+        <!-- Item 6 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-06.jpg', 'Modelo DiaDia 06')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-06.jpg"
+              alt="Modelo DiaDia 06"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 06
+          </h3>
+        </div>
+
+        <!-- Item 7 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-07.jpg', 'Modelo DiaDia 07')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-07.jpg"
+              alt="Modelo DiaDia 07"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 07
+          </h3>
+        </div>
+
+        <!-- Item 8 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-08.jpg', 'Modelo DiaDia 08')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-08.jpg"
+              alt="Modelo DiaDia 08"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 08
+          </h3>
+        </div>
+
+        <!-- Item 9 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-09.jpg', 'Modelo DiaDia 09')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-09.jpg"
+              alt="Modelo DiaDia 09"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 09
+          </h3>
+        </div>
+
+        <!-- Item 10 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-10.jpg', 'Modelo DiaDia 10')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-10.jpg"
+              alt="Modelo DiaDia 10"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 10
+          </h3>
+        </div>
+
+        <!-- Item 11 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-11.jpg', 'Modelo DiaDia 11')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-11.jpg"
+              alt="Modelo DiaDia 11"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 11
+          </h3>
+        </div>
+
+        <!-- Item 12 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-12.jpg', 'Modelo DiaDia 12')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-12.jpg"
+              alt="Modelo DiaDia 12"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 12
+          </h3>
+        </div>
+
+        <!-- Item 13 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-13.jpg', 'Modelo DiaDia 13')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-13.jpg"
+              alt="Modelo DiaDia 13"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 13
+          </h3>
+        </div>
+
+        <!-- Item 14 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-14.jpg', 'Modelo DiaDia 14')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-14.jpg"
+              alt="Modelo DiaDia 14"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 14
+          </h3>
+        </div>
+	
+	<!-- Item 15 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-15.jpg', 'Modelo DiaDia 15')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-15.jpg"
+              alt="Modelo DiaDia 15"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 15
+          </h3>
+        </div>
+	
+	<!-- Item 16 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-16.jpg', 'Modelo DiaDia 16')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-16.jpg"
+              alt="Modelo DiaDia 16"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 16
+          </h3>
+        </div>
+	
+	<!-- Item 17 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-17.jpg', 'Modelo DiaDia 17')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-17.jpg"
+              alt="Modelo DiaDia 17"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 17
+          </h3>
+        </div>
+	
+	<!-- Item 18 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-18.jpg', 'Modelo DiaDia 18')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-18.jpg"
+              alt="Modelo DiaDia 18"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 18
+          </h3>
+        </div>
+
+	
+	<!-- Item 19 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-19.jpg', 'Modelo DiaDia 19')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-19.jpg"
+              alt="Modelo DiaDia 19"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 19
+          </h3>
+        </div>
+
+
+	<!-- Item 20 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-20.jpg', 'Modelo DiaDia 20')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-20.jpg"
+              alt="Modelo DiaDia 20"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 20
+          </h3>
+        </div>
+		
+
+	<!-- Item 21 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-21.jpg', 'Modelo DiaDia 21')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-21.jpg"
+              alt="Modelo DiaDia 21"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 21
+          </h3>
+        </div>
+
+	
+	<!-- Item 22 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-22.jpg', 'Modelo DiaDia 22')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-22.jpg"
+              alt="Modelo DiaDia 22"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 22
+          </h3>
+        </div>
+
+
+	<!-- Item 23 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-23.jpg', 'Modelo DiaDia 23')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-23.jpg"
+              alt="Modelo DiaDia 23"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 23
+          </h3>
+        </div>
+
+
+	<!-- Item 24 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-24.jpg', 'Modelo DiaDia 24')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-24.jpg"
+              alt="Modelo DiaDia 24"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 24
+          </h3>
+        </div>
+
+
+	<!-- Item 25 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-25.jpg', 'Modelo DiaDia 25')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-25.jpg"
+              alt="Modelo DiaDia 25"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 25
+          </h3>
+        </div>
+
+
+	<!-- Item 26 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-26.jpg', 'Modelo DiaDia 26')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-26.jpg"
+              alt="Modelo DiaDia 26"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 26
+          </h3>
+        </div>
+
+
+	<!-- Item 27 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-27.jpg', 'Modelo DiaDia 27')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-27.jpg"
+              alt="Modelo DiaDia 27"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 27
+          </h3>
+        </div>
+
+
+	<!-- Item 28 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-28.jpg', 'Modelo DiaDia 28')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-28.jpg"
+              alt="Modelo DiaDia 28"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 28
+          </h3>
+        </div>
+
+
+	<!-- Item 29 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-29.jpg', 'Modelo DiaDia 29')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-29.jpg"
+              alt="Modelo DiaDia 29"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 29
+          </h3>
+        </div>
+
+
+	<!-- Item 30 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-30.jpg', 'Modelo DiaDia 30')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-30.jpg"
+              alt="Modelo DiaDia 30"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 30
+          </h3>
+        </div>
+
+
+	<!-- Item 31 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-31.jpg', 'Modelo DiaDia 31')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-31.jpg"
+              alt="Modelo DiaDia 31"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 31
+          </h3>
+        </div>
+
+
+	<!-- Item 32 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-32.jpg', 'Modelo DiaDia 32')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-32.jpg"
+              alt="Modelo DiaDia 32"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 32
+          </h3>
+        </div>
+
+
+	<!-- Item 33 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-33.jpg', 'Modelo DiaDia 33')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-33.jpg"
+              alt="Modelo DiaDia 33"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 33
+          </h3>
+        </div>
+
+
+	<!-- Item 34 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-34.jpg', 'Modelo DiaDia 34')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-34.jpg"
+              alt="Modelo DiaDia 34"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 34
+          </h3>
+        </div>
+
+
+	<!-- Item 35 -->
+        <div
+          class="bg-white dark:bg-neutral-800 p-4 rounded-3xl shadow-lg border border-delicate-pink/10 text-center transition-colors duration-500"
+        >
+          <!-- Adicionado o cursor-pointer e o onclick aqui em baixo: -->
+          <div
+            class="w-full h-64 rounded-2xl overflow-hidden mb-3 bg-neutral-100 cursor-pointer"
+            onclick="
+              abrirModal('imagens/diadia/diadia-35.jpg', 'Modelo DiaDia 35')
+            "
+          >
+            <img
+              src="imagens/diadia/diadia-35.jpg"
+              alt="Modelo DiaDia 35"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300"
+            />
+          </div>
+          <h3 class="font-bold text-dark-text dark:text-white">
+            Modelo DiaDia 35
+          </h3>
+        </div>
 
       <!-- BANNER DE ENCOMENDAS PERSONALIZADAS -->
       <section class="max-w-4xl mx-auto mb-12">
-        <div class="bg-gradient-to-br from-cream-bg to-[#FFF8DC] dark:from-neutral-800 dark:to-neutral-900 p-8 rounded-4xl border-2 border-dashed border-delicate-pink/40 dark:border-dark-tiffany-blue/40 shadow-md text-center space-y-5 transition-colors duration-500">
+        <div
+          class="bg-gradient-to-br from-cream-bg to-[#FFF8DC] dark:from-neutral-800 dark:to-neutral-900 p-8 rounded-4xl border-2 border-dashed border-delicate-pink/40 dark:border-dark-tiffany-blue/40 shadow-md text-center space-y-5 transition-colors duration-500"
+        >
           <div class="text-3xl">💡 🍪 ✨</div>
-          <h3 class="text-2xl md:text-3xl font-dancing-script font-bold text-tiffany-blue dark:text-dark-tiffany-blue">
+          <h3
+            class="text-2xl md:text-3xl font-dancing-script font-bold text-tiffany-blue dark:text-dark-tiffany-blue"
+          >
             Gostaria de uma embalagem ou formato especial para hoje?
           </h3>
-          <p class="text-sm md:text-base text-dark-text/80 dark:text-dark-text-light/95 max-w-2xl mx-auto leading-relaxed">
-            Seja um lanche individual, um mimo de agradecimento ou formatos cotidianos especiais, <strong class="text-delicate-pink dark:text-dark-delicate-pink">nós providenciamos cortadores e layouts personalizados</strong> focando no seu total agrado e satisfação!
+          <p
+            class="text-sm md:text-base text-dark-text/80 dark:text-dark-text-light/95 max-w-2xl mx-auto leading-relaxed"
+          >
+            Seja um lanche individual, um mimo de agradecimento ou formatos
+            cotidianos especiais,
+            <strong class="text-delicate-pink dark:text-dark-delicate-pink"
+              >nós providenciamos cortadores e layouts personalizados</strong
+            >
+            focando no seu total agrado e satisfação!
           </p>
-          <p class="text-xs text-dark-text/60 dark:text-dark-text-light/60 italic">
-            Chame a gente no WhatsApp para contar o que você imaginou para deixar o seu dia ainda mais doce!
+          <p
+            class="text-xs text-dark-text/60 dark:text-dark-text-light/60 italic"
+          >
+            Chame a gente no WhatsApp para contar o que você imaginou para
+            deixar o seu dia ainda mais doce!
           </p>
           <div class="pt-2">
-            <a href="https://wa.me/5567992086035?text=Olá%20Dai!%20Gostaria%20de%20conversar%20sobre%20um%20pedido/formato%20personalizado%20para%20o%20meu%20dia%20a%20dia..." target="_blank" class="inline-block bg-tiffany-blue hover:bg-delicate-pink text-white font-bold px-8 py-3 rounded-full shadow-md transition duration-300">
+            <a
+              href="https://wa.me/5567992086035?text=Olá%20Dai!%20Gostaria%20de%20conversar%20sobre%20um%20pedido/formato%20personalizado%20para%20o%20meu%20dia%20a%20dia..."
+              target="_blank"
+              class="inline-block bg-tiffany-blue hover:bg-delicate-pink text-white font-bold px-8 py-3 rounded-full shadow-md transition duration-300"
+            >
               💬 Fazer Pedido Personalizado
             </a>
           </div>
@@ -130,8 +930,12 @@
       </section>
     </main>
 
-    <footer class="bg-[#FFF8DC] dark:bg-dark-soft-cream py-6 text-center border-t border-delicate-pink/20 transition-colors duration-500">
-      <p class="text-xs text-dark-text/70 dark:text-dark-text-light/70">&copy; 2026 Doce Sabor by Dai. Todos os direitos reservados.</p>
+    <footer
+      class="bg-[#FFF8DC] dark:bg-dark-soft-cream py-6 text-center border-t border-delicate-pink/20 transition-colors duration-500"
+    >
+      <p class="text-xs text-dark-text/70 dark:text-dark-text-light/70">
+        &copy; 2026 Doce Sabor by Dai. Todos os direitos reservados.
+      </p>
     </footer>
 
     <script>
@@ -145,5 +949,49 @@
         document.documentElement.classList.remove("dark");
       }
     </script>
+
+<!-- MODAL DE ZOOM DA IMAGEM -->
+    <div
+      id="imageModal"
+      class="fixed inset-0 z-50 hidden bg-black/80 flex items-center justify-center p-4 cursor-pointer"
+      onclick="fecharModal()"
+    >
+      <div
+        class="relative max-w-4xl max-h-full text-center"
+        onclick="event.stopPropagation()"
+      >
+        <button
+          onclick="fecharModal()"
+          class="absolute -top-10 right-0 text-white text-3xl font-bold hover:text-delicate-pink"
+        >
+          &times;
+        </button>
+        <img
+          id="modalImg"
+          src=""
+          alt="Zoom da Bolachinha"
+          class="max-w-full max-h-[80vh] rounded-2xl object-contain shadow-2xl mx-auto"
+        />
+        <p id="modalCaption" class="text-white mt-4 font-bold text-xl"></p>
+      </div>
+    </div>
+
+    <script>
+      function abrirModal(src, titulo) {
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImg");
+        const modalCaption = document.getElementById("modalCaption");
+
+        modalImg.src = src;
+        modalCaption.textContent = titulo;
+        modal.classList.remove("hidden");
+      }
+
+      function fecharModal() {
+        const modal = document.getElementById("imageModal");
+        modal.classList.add("hidden");
+      }
+    </script>
+
   </body>
 </html>
