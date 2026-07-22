@@ -56,3 +56,5 @@ app.get("/api/feedbacks", async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Servidor rodando com sucesso em http://localhost:${PORT}`);
 });
+
+// Atualizado com sucesso
