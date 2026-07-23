@@ -13,16 +13,25 @@ app.get("/", (req, res) => {
 });
 
 app.post("/api/feedbacks", async (req, res) => {
-  const { nome, comentario, estrelas } = req.body;
+  const { nome, comentario, estrelas, sabor } = req.body;
 
   if (!nome || !comentario || !estrelas) {
-    return res.status(400).json({ erro: "Preencha todos os campos!" });
+    return res
+      .status(400)
+      .json({ erro: "Preencha todos os campos obrigatórios!" });
   }
 
   try {
     const { data, error } = await db
       .from("feedbacks")
-      .insert([{ nome, comentario, estrelas }])
+      .insert([
+        {
+          nome,
+          comentario,
+          estrelas,
+          sabor: sabor || "Não informado",
+        },
+      ])
       .select();
 
     if (error) {
@@ -56,5 +65,3 @@ app.get("/api/feedbacks", async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Servidor rodando com sucesso em http://localhost:${PORT}`);
 });
-
-// Atualizado com sucesso
